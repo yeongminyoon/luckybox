@@ -12,32 +12,35 @@
         android:layout_height="217dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="188dp"
+        tools:layout_editor_absoluteY="285dp"
         tools:srcCompat="@tools:sample/avatars" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="블랙박스 영상"
         tools:layout_editor_absoluteX="81dp"
-        tools:layout_editor_absoluteY="525dp" />
+        tools:layout_editor_absoluteY="203dp" />
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="252dp"
-        android:layout_height="30dp"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="81dp"
-        tools:layout_editor_absoluteY="157dp" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lucky Box 메인"
+        android:textSize="35sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="1dp" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="충격 기록"
         tools:layout_editor_absoluteX="236dp"
-        tools:layout_editor_absoluteY="525dp" />
+        tools:layout_editor_absoluteY="203dp" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -46,5 +49,14 @@
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="1dp"
         tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="사용자"
+        android:textSize="26sp"
+        tools:layout_editor_absoluteX="81dp"
+        tools:layout_editor_absoluteY="133dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
