@@ -11,6 +11,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
+            android:name=".Shockdata"
+            android:exported="false" />
+        <activity
+            android:name=".Shockreader"
+            android:exported="false" />
+        <activity
             android:name=".register"
             android:exported="false" />
         <activity
