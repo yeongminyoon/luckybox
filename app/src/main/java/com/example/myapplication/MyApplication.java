@@ -25,8 +25,6 @@ public class MyApplication extends Application {
 
             NotificationManager manager = getSystemService(NotificationManager.class);
             manager.createNotificationChannel(channel);
-
-
         }
     }
 }
