@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.myapplication">
-
     <!-- 외부 URL로부터 동영상을 스트리밍하기 위한 권한. -->
-    <uses-permission android:name="android.permission.INTERNET" />
-    <!-- 재생중 화면 어두워짐, 잠김 방지하기 위한 권한. -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- 재생중 화면 어두워짐, 잠김 방지하기 위한 권한. -->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
@@ -15,6 +13,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
+        <activity
+            android:name=".Video3"
+            android:exported="false" />
+        <activity
+            android:name=".Video2"
+            android:exported="false" />
+        <activity
+            android:name=".video1"
+            android:exported="false" />
+        <activity
+            android:name=".ShockedVideo"
+            android:exported="false" />
         <activity
             android:name=".VideoActivity"
             android:exported="false" />
@@ -30,15 +40,6 @@
         <activity
             android:name=".MainActivity"
             android:exported="false" />
-
-        <service
-            android:name=".fcm.MyFirebaseMessagingService"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
-            </intent-filter>
-        </service>
-
         <activity
             android:name=".login"
             android:exported="true">

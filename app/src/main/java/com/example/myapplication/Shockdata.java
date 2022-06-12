@@ -29,27 +29,25 @@ import java.io.IOException;
 
 public class Shockdata extends AppCompatActivity {
 
+    private StorageReference mStorageReference;
+
     TextView tv_shockpart_value;
     TextView tv_shocktime_value;
     ImageView imageView1;
     ImageView imageView2;
     ImageView imageView3;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_shockdata);
+        setContentView(R.layout.activity_main);
+
 
         Button btnGetData = findViewById(R.id.btn_get_data1);
         tv_shockpart_value = findViewById(R.id.tv_shockpart_value);
         tv_shocktime_value = findViewById(R.id.tv_shocktime_value);
-
-
-        Button btnback = (Button) findViewById(R.id.btn_get_data1);
-        btnback.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent intent = new Intent(Shockdata.this, MainActivity.class);
-                startActivity(intent); }});
+        imageView1 = findViewById(R.id.image_View1);
 
         btnGetData.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,7 +59,7 @@ public class Shockdata extends AppCompatActivity {
     }
 
 
-    private void onClickGetData(){
+    private void onClickGetData() {
         // Write a message to the database
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         DatabaseReference databaseReference = firebaseDatabase.getReference();
@@ -91,7 +89,7 @@ public class Shockdata extends AppCompatActivity {
             }
         });
 
-        StorageReference mStorageReference = FirebaseStorage.getInstance().getReference().child("shock_image/test1.jpg");
+        mStorageReference = FirebaseStorage.getInstance().getReference().child("shock_image/test1.jpg");
 
         try {
             final File localFile = File.createTempFile("test1", "jpg");
@@ -154,9 +152,5 @@ public class Shockdata extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-    };
-
-
-
+    }
 }

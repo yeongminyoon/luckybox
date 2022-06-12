@@ -57,10 +57,10 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, Shockreader.class);
                 startActivity(intent); }});
 
-        Button button1 = (Button) findViewById(R.id.black_btn);
+        Button button1 = (Button) findViewById(R.id.video_btn);
         button1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, Shockdata.class);
+                Intent intent = new Intent(MainActivity.this, ShockedVideo.class);
                 startActivity(intent); }});
     }
 }

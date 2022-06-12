@@ -19,65 +19,57 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class register extends AppCompatActivity {
 
-    private static final String TAG = "SignUpActivity";
-    private FirebaseAuth mAuth;
-    private Button sign_up;
+    private FirebaseAuth firebaseAuth;
+    private EditText editTextEmail;
+    private EditText editTextPassword;
+    private EditText editTextPassword2;
+    private Button buttonJoin;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        mAuth = FirebaseAuth.getInstance();
+        firebaseAuth = FirebaseAuth.getInstance();
 
-        sign_up = findViewById(R.id.signUpbtn);
-        sign_up.setOnClickListener(new View.OnClickListener() {
+        editTextEmail = (EditText) findViewById(R.id.editText_email);
+        editTextPassword = (EditText) findViewById(R.id.editText_passWord);
+        editTextPassword2 = (EditText) findViewById(R.id.editText_passWord2);
+
+        buttonJoin = (Button) findViewById(R.id.btn_join);
+        buttonJoin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                signUp();
+                if (!editTextEmail.getText().toString().equals("") && !editTextPassword.getText().toString().equals("")) {
+                    // 이메일과 비밀번호가 공백이 아닌 경우
+                    createUser(editTextEmail.getText().toString(), editTextPassword.getText().toString(), editTextPassword2.getText().toString());
+                } else {
+                    // 이메일과 비밀번호가 공백인 경우
+                    Toast.makeText(register.this, "계정과 비밀번호를 입력하세요.", Toast.LENGTH_LONG).show();
+                }
             }
         });
     }
 
-    // When initializing your Activity, check to see if the user is currently signed in.
-    @Override
-    public void onStart() {
-        super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-    }
-
-
-    private void signUp() {
-        // 이메일
-        EditText emailEditText = findViewById(R.id.EmaileditText);
-        String email = emailEditText.getText().toString();
-        // 비밀번호
-        EditText passwordEditText = findViewById(R.id.Password);
-        String password = passwordEditText.getText().toString();
-
-        mAuth.createUserWithEmailAndPassword(email, password)
+    private void createUser(String email, String password, String name) {
+        firebaseAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            Log.d(TAG, "createUserWithEmail:success");
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            Intent intent = new Intent(register.this, login.class);
-                            startActivity(intent);
-                            Toast.makeText(register.this, "등록 완료", Toast.LENGTH_SHORT).show();
+                            // 회원가입 성공시
+                            Toast.makeText(register.this, "회원가입 성공", Toast.LENGTH_SHORT).show();
                             finish();
                         } else {
-                            // If sign in fails, display a message to the user.
-                            Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                            Toast.makeText(register.this, "등록 에러", Toast.LENGTH_SHORT).show();
-                            return;
+                            // 계정이 중복된 경우
+                            Toast.makeText(register.this, "이미 존재하는 계정입니다.", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
     }
 
-    Intent intent = getIntent();
 
 }

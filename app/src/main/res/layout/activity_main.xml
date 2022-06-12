@@ -8,8 +8,8 @@
 
     <LinearLayout
         android:layout_width="414dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="10dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="1dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -19,7 +19,7 @@
         <TextView
             android:id="@+id/maintext"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="100dp"
             android:gravity="center"
             android:text="Lucky box"
             android:textSize="40sp"
@@ -34,10 +34,9 @@
         android:layout_marginEnd="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.566"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.439"
+        app:layout_constraintVertical_bias="0.589"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
@@ -46,14 +45,14 @@
         android:layout_height="45dp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="32dp"
         android:text="사용자 :  홍  길  동
 "
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.596"
+        app:layout_constraintHorizontal_bias="0.403"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
@@ -64,12 +63,12 @@
         android:layout_marginBottom="76dp"
         android:text=" 충격 기록"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/black_btn"
+        app:layout_constraintStart_toEndOf="@+id/video_btn"
 
         />
 
     <Button
-        android:id="@+id/black_btn"
+        android:id="@+id/video_btn"
         android:layout_width="123dp"
         android:layout_height="0dp"
         android:layout_marginStart="44dp"

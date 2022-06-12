@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication; //비디오 견본
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.net.Uri;

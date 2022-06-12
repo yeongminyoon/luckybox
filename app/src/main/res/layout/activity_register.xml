@@ -18,7 +18,8 @@
             android:gravity="center"
             android:text="회원가입"
             android:textColor="#F7000000"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            android:textStyle="bold"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -26,7 +27,7 @@
             android:orientation="vertical">
 
             <EditText
-                android:id="@+id/EmaileditText"
+                android:id="@+id/editText_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -36,7 +37,7 @@
                 android:paddingBottom="5dp" />
 
             <EditText
-                android:id="@+id/Password"
+                android:id="@+id/editText_passWord"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -45,7 +46,7 @@
                 android:paddingBottom="5dp" />
 
             <EditText
-                android:id="@+id/Password2"
+                android:id="@+id/editText_passWord2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -53,10 +54,12 @@
                 android:inputType="textPassword" />
 
             <Button
-                android:id="@+id/signUpbtn"
+                android:id="@+id/btn_join"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="회원가입" />
+                android:text="회원가입"
+                android:textStyle="bold"/>
+
         </LinearLayout>
 
     </LinearLayout>
