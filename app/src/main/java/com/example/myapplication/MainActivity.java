@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        StorageReference mStorageReference = FirebaseStorage.getInstance().getReference().child("car_image/SUV2.jpg");
+        StorageReference mStorageReference = FirebaseStorage.getInstance().getReference().child("스포츠카.png");
 
         try {
             final File localFile = File.createTempFile("test1", "jpg");
@@ -38,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
                     .addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
                         @Override
                         public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
-                            Toast.makeText(MainActivity.this, "Picture Retrived", Toast.LENGTH_SHORT).show();
                             Bitmap bitmap = BitmapFactory.decodeFile(localFile.getAbsolutePath());
                             (imageView = findViewById(R.id.imageView)).setImageBitmap(bitmap);
                         }
@@ -54,6 +53,12 @@ public class MainActivity extends AppCompatActivity {
 
         Button button = (Button) findViewById(R.id.shock_btn);
         button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Shockreader.class);
+                startActivity(intent); }});
+
+        Button button1 = (Button) findViewById(R.id.black_btn);
+        button1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, Shockdata.class);
                 startActivity(intent); }});

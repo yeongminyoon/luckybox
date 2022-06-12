@@ -40,7 +40,7 @@ public class Shockdata extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shockdata);
 
-        Button btnGetData = findViewById(R.id.btn_get_data);
+        Button btnGetData = findViewById(R.id.btn_get_data1);
         tv_shockpart_value = findViewById(R.id.tv_shockpart_value);
         tv_shocktime_value = findViewById(R.id.tv_shocktime_value);
 
@@ -66,7 +66,7 @@ public class Shockdata extends AppCompatActivity {
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         DatabaseReference databaseReference = firebaseDatabase.getReference();
         // Read from the database
-        databaseReference.child("shockread/shockpart").addValueEventListener(new ValueEventListener() {
+        databaseReference.child("shockread / shockpart").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String stringValue = snapshot.getValue(String.class);
@@ -78,7 +78,7 @@ public class Shockdata extends AppCompatActivity {
 
             }
         });
-        databaseReference.child("shockread/shocktime").addValueEventListener(new ValueEventListener() {
+        databaseReference.child("shockread / shocktime").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String stringValue = snapshot.getValue(String.class);

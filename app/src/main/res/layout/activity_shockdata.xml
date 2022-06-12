@@ -15,13 +15,9 @@
             android:id="@+id/btn_get_data1"
             android:layout_width="99dp"
             android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
             android:text="back" />
 
-        <Button
-            android:id="@+id/btn_get_data"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="shock test" />
     </LinearLayout>
 
 
@@ -35,7 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="sockpart"
+            android:text="shockpart"
             android:textSize="30sp"
             android:textStyle="bold" />
 
